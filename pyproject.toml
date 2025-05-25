@@ -1,0 +1,43 @@
+[project]
+name = "bigdata-cert"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = ["pandas>=2.2.3", "rich>=14.0.0", "scikit-learn>=1.6.1", "statsmodels>=0.14.4"]
+
+[dependency-groups]
+dev = ["ruff>=0.11.11"]
+
+[tool.ruff]
+preview = true
+output-format = "grouped"
+
+[tool.ruff.format]
+quote-style = "single"
+docstring-code-format = true
+
+[tool.ruff.lint]
+exclude = ["part*/**"]
+select = ["ALL"]
+ignore = [
+    "ANN",     # flake8-annotations
+    "COM",     # flake8-commas
+    "CPY",     # flake8-copyright
+    "D",       # pydocstyle
+    "ERA",     # eradicate
+    "FIX",     # flake8-fixme
+    "INP",     # flake8-no-pep420
+    "PD901",   # pandas-vet: pandas-df-variable-name
+    "PLR2004", # Pylint: magic-value-comparison
+    "Q",       # flake8-quotes
+    "RUF003",  # Ruff-specific rules: ambiguous-unicode-character-comment
+    "S",       # flake8-bandit
+    "T20",     # flake8-print
+    "TD",      # flake8-todos
+]
+extend-safe-fixes = [
+    "EM", # flake8-errmsg
+    "PT", # flake8-pytest-style
+    "TC", # flake8-type-checking
+]
