@@ -41,3 +41,10 @@ extend-safe-fixes = [
     "PT", # flake8-pytest-style
     "TC", # flake8-type-checking
 ]
+
+[tool.mypy]
+plugins = ["numpy.typing.mypy_plugin"]
+disable_error_code = ["import", "import-untyped"]
+check_untyped_defs = true
+warn_unused_configs = true
+warn_unused_ignores = true
